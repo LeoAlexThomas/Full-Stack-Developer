@@ -75,9 +75,11 @@ console.log(greaterThan80WithSingleLine);
 
 const numbers2 = [10, 12, 15, 16, 8, 11];
 
-const greatestNumber = numbers2.reduce(
-  (max, current) => (max > current ? max : current),
-  0
-);
+const greatestNumber = numbers2.reduce((max, current) => {
+  if (max > current) {
+    return max;
+  }
+  return current;
+}, 0);
 
 console.log(greatestNumber);
